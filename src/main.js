@@ -11,6 +11,11 @@ import Axios from "axios";
 //配置请求的根路径
 // Axios.defaults.baseURL='http://localhost:8081/api/user/'
 Axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1/'
+Axios.interceptors.request.use(config =>{
+  console.log(config)
+  config.headers.Authorization = window.sessionStorage.getItem("token");
+  return config;
+})
 //设置axios为form-data
 Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 Axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded';
