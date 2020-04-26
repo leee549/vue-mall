@@ -4,6 +4,8 @@ import login from "../components/login";
 import home from "../components/home";
 import welcome from "../components/welcome";
 import users from "../components/user/users";
+import rights from "../components/power/rights";
+import roles from "../components/power/roles";
 //全局样式
 import '../assets/global.css'
 
@@ -20,9 +22,12 @@ const router = new Router({
       redirect: "/welcome",
       children: [
         {path: "/welcome", component: welcome},
-        {path: "/users", component: users}
+        {path: "/users", component: users},
+        {path:"/rights",component:rights},
+        {path:"/roles",component:roles}
       ]
     }
+
 
 
   ]

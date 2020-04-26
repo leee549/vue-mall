@@ -9,8 +9,8 @@ import "./assets/font/iconfont.css";
 import qs from 'qs'
 import Axios from "axios";
 //配置请求的根路径
-// Axios.defaults.baseURL='http://localhost:8081/api/user/'
 Axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1/'
+// Axios.defaults.baseURL='https://www.liulongbin.top:8888/api/private/v1/'
 Axios.interceptors.request.use(config =>{
   console.log(config)
   config.headers.Authorization = window.sessionStorage.getItem("token");

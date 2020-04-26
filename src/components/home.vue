@@ -18,7 +18,7 @@
         <el-menu background-color="#333744" text-color="#fff"
                  active-text-color="#409BFF" unique-opened :collapse="isCollapse"
                  :collapse-transition="false" router @click="saveNavState"
-                  :default-active="activePath">
+                 :default-active="activePath">
           <!--一级菜单-->
           <el-submenu :index="item.id+''" v-for="item in menulist" :key="item.id">
             <template slot="title">
@@ -52,17 +52,17 @@
     data() {
       return {
         menulist: [],
-        iconObj:{
-          '125':'el-icon-user-solid',
-          '103':'el-icon-s-home',
-          '101':'el-icon-s-data',
-          '102':'el-icon-tickets',
-          '145':'el-icon-coin',
+        iconObj: {
+          '125': 'el-icon-user-solid',
+          '103': 'el-icon-s-home',
+          '101': 'el-icon-s-data',
+          '102': 'el-icon-tickets',
+          '145': 'el-icon-coin',
         },
         //是否折叠
-        isCollapse:false,
+        isCollapse: false,
         //被激活的地址
-        activePath:''
+        activePath: ''
       }
     },
     created() {
@@ -80,15 +80,16 @@
         if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
         this.menulist = res.data;
         console.log(res)
+
       },
       //点击按钮实现菜单折叠
-      toggleCollapse(){
-          this.isCollapse= ! this.isCollapse
+      toggleCollapse() {
+        this.isCollapse = !this.isCollapse
       },
       //保存链接的激活状态
-      saveNavState(activePath){
-        window.sessionStorage.setItem('activePath',activePath);
-        this.activePath= activePath
+      saveNavState(activePath) {
+        window.sessionStorage.setItem('activePath', activePath);
+        this.activePath = activePath
       }
     }
   }
@@ -120,7 +121,8 @@
 
   .el-aside {
     background-color: #333744;
-    .el-menu{
+
+    .el-menu {
       border-right: none;
     }
   }
@@ -128,10 +130,12 @@
   .el-main {
     background-color: #EAEDF1;
   }
-  .iconfont{
+
+  .iconfont {
     margin-left: 10px;
   }
-  .toggle-button{
+
+  .toggle-button {
     background-color: #475163;
     font-size: 10px;
     line-height: 24px;
