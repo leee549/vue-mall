@@ -8,9 +8,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import "./assets/font/iconfont.css";
 import qs from 'qs'
 import Axios from "axios";
+import treeTable from 'vue-table-with-tree-grid'
 //配置请求的根路径
-Axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1/'
-// Axios.defaults.baseURL='https://www.liulongbin.top:8888/api/private/v1/'
+// Axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1/'
+Axios.defaults.baseURL='https://www.liulongbin.top:8888/api/private/v1/'
 Axios.interceptors.request.use(config =>{
   console.log(config)
   config.headers.Authorization = window.sessionStorage.getItem("token");
@@ -25,6 +26,11 @@ Vue.prototype.$qs = qs
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
+
+Vue.component('tree-table',treeTable)
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -3,7 +3,7 @@
     <!--面包屑-->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>角色管理</el-breadcrumb-item>
+      <el-breadcrumb-item>权限管理</el-breadcrumb-item>
       <el-breadcrumb-item>角色列表</el-breadcrumb-item>
     </el-breadcrumb>
     <!--卡片-->
@@ -55,9 +55,9 @@
         <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
         <el-table-column label="操作" width="350px">
           <template slot-scope="scope">
-            <el-button type="primary" @click="showEditDialog(scope.row.id)" icon="el-icon-edit">编辑</el-button>
-            <el-button type="danger" @click="removeRoleById(scope.row.id)" icon="el-icon-delete">删除</el-button>
-            <el-button type="warning" icon="el-icon-setting" @click="showSetRightDialog(scope.row)">分配权限</el-button>
+            <el-button type="primary" size="medium" @click="showEditDialog(scope.row.id)" icon="el-icon-edit">编辑</el-button>
+            <el-button type="danger"  size="medium" @click="removeRoleById(scope.row.id)" icon="el-icon-delete">删除</el-button>
+            <el-button type="warning" size="medium" icon="el-icon-setting" @click="showSetRightDialog(scope.row)">分配权限</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -88,8 +88,7 @@
     <el-dialog
       title="修改角色"
       :visible.sync="editDialogVisible"
-      width="50%"
-    >
+      width="50%" >
       <!--内容主题区-->
       <el-form :model="editForm" :rules="addFormRules" ref="editFormRef" label-width="80px">
         <el-form-item label="角色名称" prop="roleName">
@@ -101,8 +100,8 @@
       </el-form>
       <!--底部区-->
       <span slot="footer" class="dialog-footer">
-    <el-button @click="editDialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="editRoleInfo">确 定</el-button>
+        <el-button @click="editDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="editRoleInfo">确 定</el-button>
       </span>
     </el-dialog>
     <!--分配权限对话框-->
