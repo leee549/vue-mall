@@ -79,10 +79,7 @@
       </span>
     </el-dialog>
     <!--编辑分类对话框-->
-    <el-dialog
-      title="修改分类"
-      :visible.sync="editDialogVisible"
-      width="50%">
+    <el-dialog title="修改分类" :visible.sync="editDialogVisible" width="50%">
       <!--内容主题区-->
       <el-form :model="editForm" :rules="addCateFormRules" ref="editFormRef" label-width="80px">
         <el-form-item label="分类名称" prop="cat_name">
