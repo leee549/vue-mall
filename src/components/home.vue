@@ -52,6 +52,7 @@
     data() {
       return {
         menulist: [],
+        //菜单图标
         iconObj: {
           '125': 'el-icon-user-solid',
           '103': 'el-icon-s-home',

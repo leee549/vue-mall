@@ -358,6 +358,7 @@
       },
       //tag删除事件
       handleClosed(i,row){
+        //从数组中删除索引i的1项
         row.attr_vals.splice(i,1)
         //发请求保存
         this.saveAttrVals(row)
