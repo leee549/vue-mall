@@ -18,7 +18,6 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
-
 //配置请求的根路径
 Axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1/'
 // Axios.defaults.baseURL='https://www.liulongbin.top:8888/api/private/v1/'
@@ -40,7 +39,6 @@ Vue.config.productionTip = false;
 Vue.use(ElementUI);
 //注册富文本编辑器
 Vue.use(VueQuillEditor)
-
 Vue.component('tree-table',treeTable)
 
 //日期格式化注册

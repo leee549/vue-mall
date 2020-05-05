@@ -12,7 +12,7 @@
       <el-row :gutter="20">
         <el-col :span="8">
           <el-input placeholder="请输入内容" clearable @clear="getUserList" v-model="queryInfo.query">
-            <el-button slot="append" icon="el-icon-search" @click="handleCurrentChange(1);getUserList"></el-button>
+            <el-button slot="append" icon="el-icon-search" @click="handleCurrentChange(1),getUserList"></el-button>
           </el-input>
         </el-col>
         <!--添加用户按钮-->
