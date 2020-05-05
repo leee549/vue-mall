@@ -11,6 +11,9 @@ import Axios from "axios";
 import treeTable from 'vue-table-with-tree-grid'
 //全局样式
 import './assets/global.css'
+//导入进度条
+import nProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 //导入富文本编辑器
 import VueQuillEditor from 'vue-quill-editor'
@@ -21,10 +24,16 @@ import 'quill/dist/quill.bubble.css'
 //配置请求的根路径
 Axios.defaults.baseURL='http://timemeetyou.com:8889/api/private/v1/'
 // Axios.defaults.baseURL='https://www.liulongbin.top:8888/api/private/v1/'
-//为每个请求获取token
+//为每个请求获取token,在request拦截器展示进度条
 Axios.interceptors.request.use(config =>{
-  console.log(config)
+  // console.log(config)
+  nProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem("token");
+  return config;
+})
+//在response隐藏进度条
+Axios.interceptors.response.use(config =>{
+  nProgress.done()
   return config;
 })
 //设置axios为form-data

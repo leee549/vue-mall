@@ -70,7 +70,7 @@
       }
       //4. 准备数据
       // 指定图表的配置项和数据
-      const result = Object.assign( this.options,res.data);
+      const result = Object.assign(this.options, res.data);
       //5. 展示数据
       myChart.setOption(result);
     },
